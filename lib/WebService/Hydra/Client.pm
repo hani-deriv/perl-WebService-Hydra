@@ -19,7 +19,7 @@ use constant OK_NO_CONTENT_CODE      => 204;
 use constant BAD_REQUEST_STATUS_CODE => 400;
 use constant HTTP_TIMEOUT_SECONDS    => 10;
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 field $http;
 field $jwks;
