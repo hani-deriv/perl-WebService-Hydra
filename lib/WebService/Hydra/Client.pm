@@ -250,7 +250,7 @@ Payload to be sent to the Hydra service to reject the login request.
 method reject_login_request ($login_challenge, $reject_payload) {
     my $method = "PUT";
     my $path   = "$admin_endpoint/admin/oauth2/auth/requests/login/reject?challenge=$login_challenge";
-    
+
     my $result = $self->api_call($method, $path, $reject_payload);
     if ($result->{code} != OK_STATUS_CODE) {
         WebService::Hydra::Exception::InvalidLoginRequest->new(

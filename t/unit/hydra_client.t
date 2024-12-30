@@ -568,7 +568,7 @@ subtest 'reject_login_request' => sub {
         code => 200,
         data => {redirect_to => 'http://dummyhydra.com/error'}
     };
-    
+
     my $got = $client->reject_login_request("VALID_CHALLENGE", $reject_payload);
     is $params[1], 'PUT', 'PUT request method';
     is $params[2], 'http://dummyhydra.com/admin/admin/oauth2/auth/requests/login/reject?challenge=VALID_CHALLENGE',
@@ -585,7 +585,7 @@ subtest 'reject_login_request' => sub {
             status_code       => 400
         }
     };
-    
+
     dies_ok { $client->reject_login_request("INVALID_CHALLENGE", $reject_payload) } 
         'Dies if non-200 status code is received from api_call';
     
